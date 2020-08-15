@@ -6,17 +6,23 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.healthyu.R;
 import com.example.healthyu.model.AppointmentRequest;
 import com.example.healthyu.utils.FireBase;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import static com.example.healthyu.activity.Data.DOCTOREMAIL;
+import static com.example.healthyu.activity.Data.EMAIL;
 import static com.example.healthyu.activity.Data.USEREMAIL;
 
 public class PaitientAppointmentRequestActivity extends AppCompatActivity {
@@ -50,12 +56,17 @@ public class PaitientAppointmentRequestActivity extends AppCompatActivity {
         String  mName, mProblem;
         mName = name.getText().toString();
         mProblem = description.getText().toString();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
         AppointmentRequest appointmentRequest = new AppointmentRequest(mProblem,drmail,mName);
-        if (!FireBase.putAppointmentRequest(appointmentRequest)) {
-            Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show();
-            Intent intent=new Intent(PaitientAppointmentRequestActivity.this,MainActivity.class);
-        } else {
-            Toast.makeText(this, "DEBUG", Toast.LENGTH_SHORT).show();
-        }
+        DatabaseReference myRef = database.getReference("APPOINTMENT").child(drmail).child("Pending");
+        myRef.push().setValue(appointmentRequest).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Toast.makeText(PaitientAppointmentRequestActivity.this, "SUCCESSFULLY UPLOADED", Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(PaitientAppointmentRequestActivity.this,MainActivity.class);
+                intent.putExtra(EMAIL,useremail);
+                startActivity(intent);
+            }
+        });
     }
 }

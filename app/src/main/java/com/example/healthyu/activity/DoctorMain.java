@@ -48,6 +48,7 @@ public class DoctorMain extends AppCompatActivity {
                 Intent intent1=new Intent(DoctorMain.this,DoctorLogs.class);
                 intent1.putExtra(DOCTOREMAIL,email);
                 startActivity(intent1);
+                break;
 
             case R.id.news:Intent intent2 = new Intent(DoctorMain.this,NewsActivity.class);
                             startActivity(intent2);

@@ -78,4 +78,7 @@ public class Doctor {
         this.email = email;
         this.dept = dept;
     }
+
+    public Doctor() {
+    }
 }

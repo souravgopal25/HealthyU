@@ -28,6 +28,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import static com.example.healthyu.activity.Data.DATA;
+import static com.example.healthyu.activity.Data.DOCTOREMAIL;
 import static com.example.healthyu.activity.Data.EMAIL;
 import static com.example.healthyu.activity.Data.USER;
 
@@ -89,7 +90,7 @@ public class LoginActivity extends AppCompatActivity {
                                     startActivity(intent);
                                 }else {
                                     Intent intent = new Intent(LoginActivity.this, DoctorMain.class);
-                                    intent.putExtra(EMAIL, email);
+                                    intent.putExtra(DOCTOREMAIL, user.getUid());
                                     startActivity(intent);
                                 }
 

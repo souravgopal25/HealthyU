@@ -40,7 +40,7 @@ public class DoctorUser extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.user:intent.putExtra(DATA,USER);
-            startActivity(intent);
+                startActivity(intent);
                 break;
         }
     }

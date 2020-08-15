@@ -21,6 +21,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -62,38 +63,38 @@ public class DoctorList extends AppCompatActivity implements ListItemClickListen
         Doctor doctor=mlist.get(clickedindex);
         String drmail=doctor.getEmail();
         intent.putExtra(USEREMAIL,email);
-        intent.putExtra(DOCTOREMAIL,drmail);
+        intent.putExtra(DOCTOREMAIL,doctor.getUid());
         startActivity(intent);
 
     }
     private void readDoctors() {
-        final FirebaseUser firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
-        DatabaseReference reference= FirebaseDatabase.getInstance().getReference("PROFILE").child("DOCTOR");
-
-        reference.addValueEventListener(new ValueEventListener() {
+        mlist=new ArrayList<>();
+        FirebaseDatabase database1 = FirebaseDatabase.getInstance();
+        DatabaseReference myRef1 = database1.getReference("PROFILE").child("DOCTOR");
+        myRef1.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                mlist.clear();
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    Doctor doct=snapshot.getValue(Doctor.class);
-                    mlist.add(doct);
-
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot snapshot1:snapshot.getChildren()){
+                    Doctor doctor=snapshot1.getValue(Doctor.class);
+                    mlist.add(doctor);
+                    System.out.println("SIZE OF MLIST"+mlist.size());
 
                 }
                 doctorListAdapter.setMlist(mlist);
 
-
             }
 
-
-
-
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(DoctorList.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
-
+            public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
+
+
+
+
+
+
+
     }
 }
