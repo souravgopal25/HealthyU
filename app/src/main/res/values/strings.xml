@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">HealtyYOU</string>
+    <string name="signin">SignIn</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="pass">Password</string>
+    <string name="cpass">CreatePassword</string>
+    <string name="signup">SignUp</string>
+    <string name="name">Name</string>
+    <string name="login">LOGIN</string>
+    <string name="save">Save</string>
+    <string name="bloodgroup">BloodGroup</string>
+    <string name="logout">LogOut</string>
+
+    // AIzaSyDGNaJfglWS6U8LUXdkyKe5TEjlrDgkvRU (API KEY)
+</resources>

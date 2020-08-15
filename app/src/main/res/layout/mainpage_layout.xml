@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    tools:openDrawer="end"
+    android:id="@+id/drawer"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <ScrollView
+        android:id="@+id/ScrollView01"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="351dp"
+                    android:layout_height="148dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="90dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/mainpicture">
+
+                </ImageView>
+
+
+                <RelativeLayout
+                    android:id="@+id/tabLinks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/toolbar"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginTop="180dp"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/appointment"
+                        android:layout_width="86dp"
+                        android:layout_height="99dp"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/appointment"/>
+
+                    <ImageButton
+                        android:id="@+id/nearby"
+                        android:layout_width="87dp"
+                        android:layout_height="100dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/appointment"
+                        android:background="@null"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/nearby" />
+
+                    <ImageButton
+                        android:id="@+id/emergency"
+                        android:layout_width="85dp"
+                        android:layout_height="99dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/nearby"
+                        android:background="@null"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/emergency" />
+
+                    <ImageButton
+                        android:id="@+id/bloodBank"
+                        android:layout_width="83dp"
+                        android:layout_height="96dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/emergency"
+                        android:background="@null"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/blood_bank" />
+
+
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/botandspecial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tabLinks"
+                    android:layout_marginTop="0dp"
+                    android:padding="10dp">
+
+                    <ImageButton
+                        android:id="@+id/medi_bot"
+                        android:layout_width="160dp"
+                        android:layout_height="80dp"
+                        android:background="@null"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/medi_bot" />
+
+
+                    <ImageButton
+                        android:id="@+id/specialised_doctor"
+                        android:layout_width="160dp"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@+id/medi_bot"
+                        android:background="@null"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/specialised_octor" />
+
+                    <RelativeLayout
+
+                        android:layout_width="350dp"
+                        android:layout_height="420dp"
+                        android:layout_below="@+id/specialised_doctor"
+                        tools:context=".MainActivity"
+                        android:layout_marginRight="5dp">
+
+                        <ImageButton
+                            android:id="@+id/imageButton"
+                            android:layout_width="145dp"
+                            android:layout_height="99dp"
+                            android:layout_below="@id/textView"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:onClick="openBrowser"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/corona"
+                            android:tag="https://www.cdc.gov/coronavirus/about/prevention.html" />
+
+                        <ImageButton
+                            android:id="@+id/imageButton2"
+                            android:layout_width="145dp"
+                            android:layout_height="99dp"
+                            android:layout_below="@id/textView"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_toRightOf="@id/imageButton"
+                            android:onClick="openBrowser"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/diabetes"
+                            android:tag="https://www.helpguide.org/articles/diets/the-diabetes-diet.htm" />
+
+                        <ImageButton
+                            android:id="@+id/imageButton3"
+                            android:layout_width="145dp"
+                            android:layout_height="99dp"
+                            android:layout_below="@id/imageButton"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="18dp"
+                            android:onClick="openBrowser"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/asthma"
+                            android:tag="https://www.webmd.com/asthma/guide/asthma-prevention" />
+
+                        <ImageButton
+                            android:id="@+id/imageButton4"
+                            android:layout_width="145dp"
+                            android:layout_height="99dp"
+                            android:layout_below="@id/imageButton2"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="18dp"
+                            android:layout_toRightOf="@id/imageButton3"
+                            android:onClick="openBrowser"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/eye"
+                            android:tag="https://www.healthline.com/health/eye-health-disease-prevention#1" />
+
+                        <ImageButton
+                            android:id="@+id/imageButton5"
+                            android:layout_width="145dp"
+                            android:layout_height="99dp"
+                            android:layout_below="@id/imageButton3"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="18dp"
+                            android:onClick="openBrowser"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/skin"
+                            android:tag="https://www.webmd.com/skin-problems-and-treatments/guide/skin-problems-treatments-symptoms-types" />
+
+                        <ImageButton
+                            android:id="@+id/imageButton6"
+                            android:layout_width="150dp"
+                            android:layout_height="99dp"
+                            android:layout_below="@id/imageButton4"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="18dp"
+                            android:layout_toRightOf="@id/imageButton5"
+                            android:onClick="openBrowser"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/hair1"
+                            android:tag="https://www.webmd.com/skin-problems-and-treatments/hair-loss/hair-problems#1" />
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="284dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15dp"
+                            android:text="Choose your health concern"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="21sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#13afc5" />
+
+
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/navigationView"
+        app:menu="@menu/menu_item"
+        app:headerLayout="@layout/header"
+        android:background="#fff"
+        android:layout_gravity="start"
+        app:itemTextColor="#000"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
