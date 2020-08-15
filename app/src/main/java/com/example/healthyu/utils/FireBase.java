@@ -1,9 +1,15 @@
 package com.example.healthyu.utils;
 
 
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 
+import com.example.healthyu.R;
 import com.example.healthyu.model.AppointmentRequest;
+import com.example.healthyu.model.User;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -47,6 +53,19 @@ public class FireBase {
         });
 
 
+
+    }
+    public static boolean uploadProfile(User user){
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("USER");
+        final int[] x = {0};
+        myRef.child(user.getUid()).child("Profile").setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                x[0] =1;
+            }
+        });
+        return x[0]==1?true:false;
 
     }
 }
