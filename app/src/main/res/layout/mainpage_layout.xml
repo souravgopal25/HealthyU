@@ -25,16 +25,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+
                 <ImageView
                     android:layout_width="351dp"
-                    android:layout_height="148dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="90dp"
+                    android:layout_height="220dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="30dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/mainpicture">
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/mainpagedoctor1">
 
                 </ImageView>
-
 
                 <RelativeLayout
                     android:id="@+id/tabLinks"
@@ -42,7 +45,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/toolbar"
                     android:layout_marginLeft="1dp"
-                    android:layout_marginTop="180dp"
+                    android:layout_marginTop="240dp"
                     android:orientation="horizontal">
 
                     <ImageButton
@@ -50,9 +53,10 @@
                         android:layout_width="86dp"
                         android:layout_height="99dp"
                         android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
                         android:background="@null"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/appointment"/>
+                        android:src="@drawable/appointment" />
 
                     <ImageButton
                         android:id="@+id/nearby"
@@ -75,18 +79,37 @@
                         android:src="@drawable/emergency" />
 
                     <ImageButton
-                        android:id="@+id/bloodBank"
-                        android:layout_width="83dp"
-                        android:layout_height="96dp"
-                        android:layout_centerVertical="true"
+                        android:id="@+id/news"
+                        android:layout_width="86dp"
+                        android:layout_height="73dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="6dp"
                         android:layout_toRightOf="@+id/emergency"
                         android:background="@null"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/blood_bank" />
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/contactless_24" />
 
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="3dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/news"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="70dp"
+                            android:layout_marginRight="30dp"
+                            android:text="News"
+                            android:textColor="#13afc5" />
+
+                    </LinearLayout>
 
 
                 </RelativeLayout>
+
                 <RelativeLayout
                     android:id="@+id/botandspecial"
                     android:layout_width="match_parent"
@@ -100,6 +123,7 @@
                         android:layout_width="160dp"
                         android:layout_height="80dp"
                         android:background="@null"
+                        android:elevation="35dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/medi_bot" />
 
@@ -111,16 +135,17 @@
                         android:layout_marginLeft="15dp"
                         android:layout_toRightOf="@+id/medi_bot"
                         android:background="@null"
+                        android:elevation="24dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/specialised_octor" />
 
                     <RelativeLayout
 
                         android:layout_width="350dp"
-                        android:layout_height="420dp"
+                        android:layout_height="500dp"
                         android:layout_below="@+id/specialised_doctor"
-                        tools:context=".MainActivity"
-                        android:layout_marginRight="5dp">
+                        android:layout_marginRight="5dp"
+                        tools:context=".MainActivity">
 
                         <ImageButton
                             android:id="@+id/imageButton"
@@ -128,9 +153,10 @@
                             android:layout_height="99dp"
                             android:layout_below="@id/textView"
                             android:layout_marginLeft="5dp"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="5dp"
                             android:onClick="openBrowser"
                             android:scaleType="centerCrop"
+                            android:elevation="20dp"
                             android:src="@drawable/corona"
                             android:tag="https://www.cdc.gov/coronavirus/about/prevention.html" />
 
@@ -140,10 +166,11 @@
                             android:layout_height="99dp"
                             android:layout_below="@id/textView"
                             android:layout_marginLeft="30dp"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="5dp"
                             android:layout_toRightOf="@id/imageButton"
                             android:onClick="openBrowser"
                             android:scaleType="centerCrop"
+                            android:elevation="20dp"
                             android:src="@drawable/diabetes"
                             android:tag="https://www.helpguide.org/articles/diets/the-diabetes-diet.htm" />
 
@@ -154,6 +181,7 @@
                             android:layout_below="@id/imageButton"
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="18dp"
+                            android:elevation="20dp"
                             android:onClick="openBrowser"
                             android:scaleType="centerCrop"
                             android:src="@drawable/asthma"
@@ -166,6 +194,7 @@
                             android:layout_below="@id/imageButton2"
                             android:layout_marginLeft="30dp"
                             android:layout_marginTop="18dp"
+                            android:elevation="20dp"
                             android:layout_toRightOf="@id/imageButton3"
                             android:onClick="openBrowser"
                             android:scaleType="centerCrop"
@@ -180,6 +209,7 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="18dp"
                             android:onClick="openBrowser"
+                            android:elevation="20dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/skin"
                             android:tag="https://www.webmd.com/skin-problems-and-treatments/guide/skin-problems-treatments-symptoms-types" />
@@ -191,22 +221,52 @@
                             android:layout_below="@id/imageButton4"
                             android:layout_marginLeft="30dp"
                             android:layout_marginTop="18dp"
+                            android:elevation="20dp"
                             android:layout_toRightOf="@id/imageButton5"
                             android:onClick="openBrowser"
                             android:scaleType="centerCrop"
                             android:src="@drawable/hair1"
                             android:tag="https://www.webmd.com/skin-problems-and-treatments/hair-loss/hair-problems#1" />
 
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="10dp"
+                            android:elevation="30dp"
+                            android:background="@drawable/gradient"
+                            android:text="@string/covidupdates"
+                            android:textColor="@color/white" />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="80dp"
+                            android:elevation="30dp"
+                            android:background="@drawable/gradient"
+                            android:text="@string/covidbttn"
+                            android:textColor="@color/white" />
+
                         <TextView
                             android:id="@+id/textView"
                             android:layout_width="284dp"
-                            android:layout_height="30dp"
+                            android:layout_height="40dp"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginTop="15dp"
+                            android:layout_marginTop="160dp"
+                            android:elevation="20dp"
                             android:text="Choose your health concern"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="21sp"
+                            android:textSize="20sp"
                             android:textStyle="bold" />
+
+                        <com.google.android.material.navigation.NavigationView
+                            android:id="@+id/navigationView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="start"
+                            android:background="#fff"
+                            app:headerLayout="@layout/header"
+                            app:itemTextColor="#000"
+                            app:menu="@menu/menu_item" />
                     </RelativeLayout>
 
                 </RelativeLayout>
@@ -214,26 +274,14 @@
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:background="#13afc5" />
-
-
 
 
             </RelativeLayout>
 
         </LinearLayout>
     </ScrollView>
-
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/navigationView"
-        app:menu="@menu/menu_item"
-        app:headerLayout="@layout/header"
-        android:background="#fff"
-        android:layout_gravity="start"
-        app:itemTextColor="#000"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
