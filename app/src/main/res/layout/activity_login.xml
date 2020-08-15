@@ -103,6 +103,7 @@
             android:background="@drawable/gradient"
             android:textColor="@color/white"
             android:padding="3dp"
+            android:elevation="@dimen/elevation"
             android:text="Sign In"
             android:textSize="24sp"/>
     </LinearLayout>
