@@ -27,6 +27,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static com.example.healthyu.activity.Data.DATA;
+import static com.example.healthyu.activity.Data.EMAIL;
+import static com.example.healthyu.activity.Data.USER;
+
 public class LoginActivity extends AppCompatActivity {
 
     @BindView(R.id.login_emailid)
@@ -41,11 +45,14 @@ public class LoginActivity extends AppCompatActivity {
     Button createAccount;
     private String TAG=LoginActivity.class.getSimpleName();
     private FirebaseAuth mAuth;
+    String data;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+        Intent intent=getIntent();
+        data=intent.getStringExtra(DATA);
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
     }
@@ -73,9 +80,15 @@ public class LoginActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 // Sign in success, update UI with the signed-in user's information
-                                Log.d(TAG, "createUserWithEmail:success");
+                                Log.d(TAG, "Login :success");
                                 FirebaseUser user = mAuth.getCurrentUser();
-                                //TODO put intent here
+                                if (data.equals(USER)) {
+                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                    intent.putExtra(EMAIL, email);
+                                }else {
+                                    Intent intent = new Intent(LoginActivity.this, DoctorMain.class);
+                                    intent.putExtra(EMAIL, email);
+                                }
 
 
                             } else {
@@ -97,7 +110,13 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.createAccount)
     public void onViewClicked1() {
-        Intent intent =new Intent(LoginActivity.this,SignupActivity.class);
-        startActivity(intent);
+        if (data.equals(USER)) {
+            Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
+            startActivity(intent);
+        }else {
+            Intent intent = new Intent(LoginActivity.this, DoctorSignup.class);
+            startActivity(intent);
+
+        }
     }
 }

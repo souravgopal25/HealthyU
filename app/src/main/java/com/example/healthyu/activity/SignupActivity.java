@@ -37,8 +37,6 @@ public class SignupActivity extends AppCompatActivity {
     EditText mobileNumber;
     @BindView(R.id.password)
     EditText password;
-    @BindView(R.id.confirmPassword)
-    EditText confirmPassword;
     @BindView(R.id.signUpBtn)
     Button signUpBtn;
     String name,email,mob,pass,cpass;
@@ -77,7 +75,7 @@ public class SignupActivity extends AppCompatActivity {
                                 user1.setUid(uid);
                                 FireBase.uploadProfile(user1);
 
-                               //TODO PUT INTENT
+                               Intent intent=new Intent(SignupActivity.this,MainActivity.class);
 
 
                             } else {
@@ -100,7 +98,6 @@ public class SignupActivity extends AppCompatActivity {
         email=userEmailId.getText().toString();
         mob=mobileNumber.getText().toString();
         pass=password.getText().toString();
-        cpass=confirmPassword.getText().toString();
     }
     private int check() {
         int t=0;
@@ -117,14 +114,6 @@ public class SignupActivity extends AppCompatActivity {
             password.setError("Password Required");
             t=1;
 
-        }
-        if (TextUtils.isEmpty(cpass)){
-            confirmPassword.setError("Confirm Password Required");
-            t=1;
-        }
-        if (!pass.equals(cpass)){
-            Toast.makeText(this, "Password is not same check again", Toast.LENGTH_SHORT).show();
-            t=1;
         }
         return t;
     }

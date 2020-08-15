@@ -23,8 +23,7 @@ public class FireBase {
     private static FirebaseDatabase database = FirebaseDatabase.getInstance();
     private static  List<AppointmentRequest> mlist;
     public static boolean putAppointmentRequest(AppointmentRequest appointmentRequest){
-        List<AppointmentRequest> list=new ArrayList<>();
-        list.add(appointmentRequest);
+
         DatabaseReference myRef = database.getReference("APPOINTMENT").child(appointmentRequest.getDoctorId()).child("Pending");
         return myRef.push().setValue(appointmentRequest).isSuccessful();
 

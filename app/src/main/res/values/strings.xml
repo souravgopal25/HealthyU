@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">HealthyU</string>
+    <string name="signin">SignIn</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="pass">Password</string>
+    <string name="cpass">CreatePassword</string>
+    <string name="signup">SignUp</string>
+    <string name="name">Name</string>
+    <string name="login">LOGIN</string>
+    <string name="save">Save</string>
+    <string name="bloodgroup">BloodGroup</string>
+    <string name="logout">LogOut</string>
+    <string name="slide_2">Get Your Doctors</string>
+    <string name="slide_2_1">Doctor discoverability and consultancy for necessary medical advice in time.</string>
+    <string name="slide_3">We take supreme care of your health</string>
+    <string name="covidbttn">PRECAUTION / HOME REMEDIES</string>
+    <string name="covidupdates">COVID UPDATES</string>
 </resources>

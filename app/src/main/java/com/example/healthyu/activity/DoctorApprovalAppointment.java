@@ -1,5 +1,6 @@
 package com.example.healthyu.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -23,25 +24,31 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static com.example.healthyu.activity.Data.DOCTOREMAIL;
+
 public class DoctorApprovalAppointment extends AppCompatActivity implements AppointmentAdapter.ListItemClickListener{
 
     @BindView(R.id.recycler)
     RecyclerView recycler;
     List<AppointmentRequest> mlist;
     AppointmentAdapter appointmentAdapter;
-
+    String email;
+    FirebaseDatabase database;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_approval_appointment);
         ButterKnife.bind(this);
+        Intent intent=getIntent();
+        database=FirebaseDatabase.getInstance();
+        email=intent.getStringExtra(DOCTOREMAIL);
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
         recycler.setLayoutManager(linearLayoutManager);
         recycler.setHasFixedSize(true);
 
         mlist=new ArrayList<>();
         FirebaseDatabase database1 = FirebaseDatabase.getInstance();
-        DatabaseReference myRef1 = database1.getReference("APPOINTMENT").child("25").child("Pending");
+        DatabaseReference myRef1 = database1.getReference("APPOINTMENT").child(email).child("Pending");
         myRef1.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -72,6 +79,15 @@ public class DoctorApprovalAppointment extends AppCompatActivity implements Appo
     @Override
     public void onListItemClick(int clickedIndex, int buttonNumber) {
         Toast.makeText(this, "Clicked on "+Integer.toString(clickedIndex) + (buttonNumber==0?"Reject":"Accept"), Toast.LENGTH_SHORT).show();
+        AppointmentRequest appointmentRequest=mlist.get(clickedIndex);
+        DatabaseReference myRef = database.getReference("APPOINTMENT").child(appointmentRequest.getDoctorId());
+        if (buttonNumber==0){
+
+           myRef.child("REJECTED").push().setValue(appointmentRequest).isSuccessful();
+        }else {
+            myRef.child("ACCEPTED").push().setValue(appointmentRequest).isSuccessful();
+
+        }
         mlist.remove(clickedIndex);
 
         appointmentAdapter.setMlist(mlist);

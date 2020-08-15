@@ -37,13 +37,14 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsAdapterVie
     @Override
     public NewsAdapterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater=LayoutInflater.from(context);
-        View view=inflater.inflate(R.layout.item, parent, false);
+        View view=inflater.inflate(R.layout.news_item, parent, false);
         return new NewsAdapterViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull NewsAdapterViewHolder holder, int position) {
         News.ArticlesBean obj=mlist.get(position);
+
         Glide.with(context).load(obj.getUrlToImage()).into(holder.imageView);
         holder.title.setText(obj.getTitle());
         holder.description.setText(obj.getDescription());
@@ -52,7 +53,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsAdapterVie
 
     @Override
     public int getItemCount() {
-        return mlist.size();
+        return mlist==null?0:mlist.size();
     }
 
 

@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitRequest {
     private static final String BASE_URL="https://newsapi.org";
     private static Retrofit retrofit;
-    public static Retrofit getRetrofitInstance(){
+    public static Retrofit getRetrofitInstanceNews(){
         if (retrofit==null){
             retrofit= new Retrofit.Builder().
                     baseUrl(BASE_URL).
@@ -15,5 +15,13 @@ public class RetrofitRequest {
                     build();
         }
         return retrofit;
+    }
+    public static Retrofit getRetrofitInstanceStats(){
+          retrofit= new Retrofit.Builder().
+                    baseUrl("https://corona.lmao.ninja").
+                    addConverterFactory(GsonConverterFactory.create()).
+                    build();
+       return retrofit;
+
     }
 }

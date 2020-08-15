@@ -1,5 +1,6 @@
 package com.example.healthyu.networking;
 
+import com.example.healthyu.model.Covid;
 import com.example.healthyu.model.News;
 
 import retrofit2.Call;
@@ -9,5 +10,8 @@ public interface ApiInterface {
 
     @GET("/v2/top-headlines?country=id&category=health&apiKey=40e6af5951764edc9f436ad66871577d")
     Call<News> getList();
+
+    @GET("/v2/all")
+    Call<Covid> getData();
 
 }

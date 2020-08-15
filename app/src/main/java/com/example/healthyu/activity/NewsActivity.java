@@ -4,10 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,6 +21,7 @@ import com.example.healthyu.adapter.NewsAdapter;
 import com.example.healthyu.model.News;
 import com.example.healthyu.networking.ApiInterface;
 import com.example.healthyu.networking.RetrofitRequest;
+import com.example.healthyu.viewModel.NewsActivityViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +39,9 @@ public class NewsActivity extends AppCompatActivity implements ListItemClickList
     List<News.ArticlesBean> mlist;
     ApiInterface apiInterface;
     NewsAdapter newsAdapter;
+    News mNews;
+    private static String TAG=NewsActivity.class.getSimpleName();
+    NewsActivityViewModel newsActivityViewModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,27 +50,15 @@ public class NewsActivity extends AppCompatActivity implements ListItemClickList
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
         recycler.setLayoutManager(linearLayoutManager);
         recycler.setHasFixedSize(true);
-
         newsAdapter=new NewsAdapter(this,this);
-        apiInterface= RetrofitRequest.getRetrofitInstance().create(ApiInterface.class);
-        apiInterface.getList().enqueue(new Callback<News>() {
+        recycler.setAdapter(newsAdapter);
+        newsActivityViewModel= ViewModelProviders.of(this).get(NewsActivityViewModel.class);
+        newsActivityViewModel.getData().observe(this, new Observer<News>() {
             @Override
-            public void onResponse(Call<News> call, Response<News> response) {
-               News news=response.body();
-              if (mlist==null){
-                  mlist=news.getArticles();
-              }else {
-                  mlist.clear();
-                  mlist.addAll(news.getArticles());
-              }
-               newsAdapter.setMlist(mlist);
-               recycler.setAdapter(newsAdapter);
-
-            }
-
-            @Override
-            public void onFailure(Call<News> call, Throwable t) {
-                Toast.makeText(NewsActivity.this, "Problem in Parsing News", Toast.LENGTH_SHORT).show();
+            public void onChanged(News news) {
+                mNews=news;
+                mlist=mNews.getArticles();
+                newsAdapter.setMlist(mlist);
 
             }
         });

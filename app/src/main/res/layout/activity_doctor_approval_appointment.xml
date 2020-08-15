@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:padding="16dp"
     android:layout_height="match_parent"
-    android:background="#CFC558"
     tools:context=".activity.DoctorApprovalAppointment">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
-        android:background="#1DE9B6"
+        android:elevation="@dimen/elevation"
+        android:background="@drawable/gradient"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
