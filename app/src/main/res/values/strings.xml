@@ -16,4 +16,18 @@
     <string name="slide_3">We take supreme care of your health</string>
     <string name="covidbttn">PRECAUTION / HOME REMEDIES</string>
     <string name="covidupdates">COVID UPDATES</string>
+
+    <string name="drawerOpen">drawerOpen</string>
+    <string name="drawerClose">drawerClose</string>
+
+    <string name="worried_about_your_health">Worried about Your health?</string>
+    <string name="we_got_you_covered">We got you covered!</string>
+    <string name="get_your_insurance_now">Get Your Insurance Now</string>
+
+    <string name="donate_to_keep_running">Donate us to keep this
+        awesome app running and
+        making your life easy.
+</string>
+    <string name="every_penny_matters">Even a single Penny Matters</string>
+    <string name="donate_now">Donate Now</string>
 </resources>

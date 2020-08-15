@@ -24,10 +24,10 @@ public class EmergencyActivity extends AppCompatActivity {
     @BindView(R.id.button)
     Button button;
 
-    public static void setXY(double x1, double y1) {
-        x = x1;
-        y = y1;
-    }
+//    public static void setXY(double x1, double y1) {
+//        x = x1;
+//        y = y1;
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,8 +57,8 @@ public class EmergencyActivity extends AppCompatActivity {
                 switch (getResultCode())
                 {
                     case Activity.RESULT_OK:
-                        Toast.makeText(getBaseContext(), "SMS sent",
-                                Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getBaseContext(), "SMS sent to your Close contact",
+                                Toast.LENGTH_LONG).show();
                         break;
                     case SmsManager.RESULT_ERROR_GENERIC_FAILURE:
                         Toast.makeText(getBaseContext(), "Generic failure",

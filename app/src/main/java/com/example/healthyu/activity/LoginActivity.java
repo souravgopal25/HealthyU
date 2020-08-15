@@ -81,13 +81,16 @@ public class LoginActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 // Sign in success, update UI with the signed-in user's information
                                 Log.d(TAG, "Login :success");
+                                Toast.makeText(LoginActivity.this, "Login :success", Toast.LENGTH_SHORT).show();
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 if (data.equals(USER)) {
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                     intent.putExtra(EMAIL, email);
+                                    startActivity(intent);
                                 }else {
                                     Intent intent = new Intent(LoginActivity.this, DoctorMain.class);
                                     intent.putExtra(EMAIL, email);
+                                    startActivity(intent);
                                 }
 
 
