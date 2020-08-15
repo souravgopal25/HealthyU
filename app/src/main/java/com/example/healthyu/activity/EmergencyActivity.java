@@ -27,11 +27,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class EmergencyActivity extends AppCompatActivity  implements LocationListener {
+public class EmergencyActivity extends AppCompatActivity implements LocationListener {
     public static Double x, y;
     @BindView(R.id.button)
     Button button;
     private LocationManager locationManager;
+
     @RequiresApi(api = Build.VERSION_CODES.M)
 
 //    public static void setXY(double x1, double y1) {
@@ -45,6 +46,7 @@ public class EmergencyActivity extends AppCompatActivity  implements LocationLis
         setContentView(R.layout.activity_emergency);
         ButterKnife.bind(this);
 
+
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
@@ -53,14 +55,14 @@ public class EmergencyActivity extends AppCompatActivity  implements LocationLis
         Location location = locationManager.getLastKnownLocation(locationManager.NETWORK_PROVIDER);
         onLocationChanged(location);
         //Thread t1=new Thread();
-        sendSMS("9113385396","i am in trouble please help get ambulance at my location"+x+","+y);
-        sendSMS("7250787741","i am in trouble please help get ambulance at my location"+x+"+y");
+        sendSMS("9113385396", "i am in trouble please help get ambulance at my location" + x + "," + y);
+        sendSMS("7250787741", "i am in trouble please help get ambulance at my location" + x + "+y");
         // t1.start();
 
 
     }
-    void sendSMS(String phoneNumber, String message)
-    {
+
+    void sendSMS(String phoneNumber, String message) {
         String SENT = "SMS_SENT";
         String DELIVERED = "SMS_DELIVERED";
 
@@ -71,11 +73,10 @@ public class EmergencyActivity extends AppCompatActivity  implements LocationLis
                 new Intent(DELIVERED), 0);
 
         //---when the SMS has been sent---
-        registerReceiver(new BroadcastReceiver(){
+        registerReceiver(new BroadcastReceiver() {
             @Override
             public void onReceive(Context arg0, Intent arg1) {
-                switch (getResultCode())
-                {
+                switch (getResultCode()) {
                     case Activity.RESULT_OK:
                         Toast.makeText(getBaseContext(), "SMS sent",
                                 Toast.LENGTH_SHORT).show();
@@ -101,11 +102,10 @@ public class EmergencyActivity extends AppCompatActivity  implements LocationLis
         }, new IntentFilter(SENT));
 
         //---when the SMS has been delivered---
-        registerReceiver(new BroadcastReceiver(){
+        registerReceiver(new BroadcastReceiver() {
             @Override
             public void onReceive(Context arg0, Intent arg1) {
-                switch (getResultCode())
-                {
+                switch (getResultCode()) {
                     case Activity.RESULT_OK:
                         Toast.makeText(getBaseContext(), "SMS delivered",
                                 Toast.LENGTH_SHORT).show();
@@ -124,9 +124,8 @@ public class EmergencyActivity extends AppCompatActivity  implements LocationLis
     }
 
 
-
     @Override
-    public void onLocationChanged( Location location) {
+    public void onLocationChanged(Location location) {
         x = location.getLongitude();
         y = location.getLatitude();
     }
@@ -149,5 +148,10 @@ public class EmergencyActivity extends AppCompatActivity  implements LocationLis
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
+    }
+
+    @OnClick(R.id.button)
+    public void onViewClicked() {
+        Toast.makeText(this, "Your Message and Location has been sent to Your Close Contact", Toast.LENGTH_LONG).show();
     }
 }

@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                 return false;
             }
 
-            private  void logout(final Activity activity) {
+            private void logout(final Activity activity) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle("Logout");
                 builder.setMessage("Are you sure you want to logout?");
@@ -229,9 +229,9 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle(R.string.app_name);
         builder.setIcon(R.mipmap.ic_launcher);
-        builder.setMessage("Do you want to exit?")
+       builder.setMessage("Do you want to exit?")
                 .setCancelable(false)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+               .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         finish();
                     }
