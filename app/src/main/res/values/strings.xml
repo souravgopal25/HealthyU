@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Insurance</string>
+    <string name="worried_about_your_health">Worried about Your health?</string>
+    <string name="we_got_you_covered">We got you covered!</string>
+    <string name="get_your_insurance_now">Get Your Insurance Now</string>
+
+</resources>
