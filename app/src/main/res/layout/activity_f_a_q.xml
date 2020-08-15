@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/offwhite">
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Frequently Asked Questions"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Q1.What happens if I need to go to a hospital?"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="65dp" />
+
+    <TextView
+        android:layout_width="314dp"
+        android:layout_height="168dp"
+        android:background="@color/white"
+        android:text="Medkit works with nearly all of the hospitals in the area, allowing you to go to the hospital of your choice, and we can help coordinate care as needed. If you see one of our providers and need to see a specialist for a follow up at a hospital, we can provide the referral and help coordinate the logistics. If you end up at a hospital for another reason, we can help you have all your medical records transferred to Medkit, so your provider will be able to review your stay and test results and help with any needed follow up."
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="27dp"
+        android:textSize="18dp"
+        tools:layout_editor_absoluteY="96dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Q2.Does Medikit offer urgent care?"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="283dp" />
+
+    <TextView
+        android:layout_width="314dp"
+        android:layout_height="wrap_content"
+        android:text="Medkit care providers can address a wide range of urgent and acute concerns. Because we offer same-day appointment availability and 24/7 access to our clinical team, we are a great option for urgent needs. If you have a concern after-hours or are unsure whether you should go straight to an urgent care facility or the nearest emergency room, please call our office to be connected with a member of the Medkit team."
+        tools:layout_editor_absoluteX="27dp"
+        android:textSize="18dp"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteY="315dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Q3.How can I book an appointment ?"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="592dp" />
+
+    <TextView
+        android:layout_width="314dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="You can go to the main page, click on the appointment button an fill the form for a particular project. "
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="629dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Q3.Is the app free?"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="710dp" />
+
+    <TextView
+        android:layout_width="314dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="Seeing the pandemic situation, the app is free for now."
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="629dp" />
+    </LinearLayout>
+
+
+
+
+</ScrollView>

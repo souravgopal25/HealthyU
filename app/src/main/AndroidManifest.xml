@@ -20,7 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.EntrySlider"></activity>
+        <activity android:name=".activity.FAQ"></activity>
+        <activity android:name=".activity.AboutUs" />
+        <activity android:name=".activity.EntrySlider" />
         <activity android:name=".activity.FirstAid" />
         <activity android:name=".activity.donate_us" />
         <activity android:name=".activity.insurance" />
