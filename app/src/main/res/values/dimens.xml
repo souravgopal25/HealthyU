@@ -4,6 +4,6 @@
     <dimen name="main_activity_toolbar_layout_height">58dp</dimen>
     <dimen name="textsizeappbarlayout">40sp</dimen>
     <dimen name="elevationCard">12dp</dimen>
-    <dimen name="elevation">5dp</dimen>
+    <dimen name="elevation">14dp</dimen>
 
 </resources>
