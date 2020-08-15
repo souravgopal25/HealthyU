@@ -30,8 +30,6 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.healthyu.R;
-import com.example.healthyu.donate_us;
-import com.example.healthyu.insurance;
 import com.google.android.material.navigation.NavigationView;
 
 import butterknife.BindView;
@@ -218,6 +216,8 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                                  startActivity(cIntent);*/
                 break;
             case R.id.precautions:
+                Intent intent6 = new Intent(this, FirstAid.class);
+                startActivity(intent6);
                 break;
         }
     }

@@ -20,8 +20,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".donate_us" />
-        <activity android:name=".insurance" />
+        <activity android:name=".activity.EntrySlider"></activity>
+        <activity android:name=".activity.FirstAid" />
+        <activity android:name=".activity.donate_us" />
+        <activity android:name=".activity.insurance" />
         <activity android:name=".activity.DoctorUser" />
         <activity android:name=".activity.DoctorLogs" />
         <activity android:name=".activity.DoctorMain" />
@@ -34,14 +36,14 @@
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.PaitientAppointmentRequestActivity" />
         <activity android:name=".activity.DoctorApprovalAppointment" />
-        <activity android:name=".activity.MainActivity"/>
-            <activity android:name=".activity.SplashScreen">
-                <intent-filter>
-                    <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-                    <category android:name="android.intent.category.LAUNCHER" />
-                </intent-filter>
-            </activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

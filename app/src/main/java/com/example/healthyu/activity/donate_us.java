@@ -1,4 +1,4 @@
-package com.example.healthyu;
+package com.example.healthyu.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,19 +8,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class insurance extends AppCompatActivity {
-    Button insuranceButton;
+import com.example.healthyu.R;
+
+public class donate_us extends AppCompatActivity {
+    Button donateus;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_insurance);
+        setContentView(R.layout.activity_donate_us);
 
-        insuranceButton = (Button) findViewById(R.id.get_insured_now);
-        insuranceButton.setOnClickListener(new View.OnClickListener() {
+        donateus = (Button) findViewById(R.id.donateUs);
+
+        donateus.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                Uri uri = Uri.parse("https://bpjs-kesehatan.go.id/");
+                Uri uri = Uri.parse("https://www.paypal.me/kumabhishek");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
