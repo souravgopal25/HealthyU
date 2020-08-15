@@ -5,9 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".activity.MainActivity">
     <Button
+        android:id="@+id/patient"
         android:text="PAitient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/dr"
+        android:text="Doctor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/hospitalnearby"
+        android:text="NEARBY HOSPITAL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/login"
+        android:text="LOG-IN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/signup"
+        android:text="SIGN-UP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/news"
+        android:text="News"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
