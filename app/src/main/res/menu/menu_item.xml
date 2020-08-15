@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/profile"
+        android:title="EDIT PROFILE"/>
+
+    <item
+        android:id="@+id/appointment"
+        android:title="APPOINTMENT"/>
+
+    <item
+        android:id="@+id/doctors"
+        android:title="DOCTORS"/>
+
+    <item
+        android:id="@+id/insurance"
+        android:title="INSURANCE"/>
+
+    <item
+        android:id="@+id/about"
+        android:title="ABOUT US"/>
+
+    <item
+        android:id="@+id/faq"
+        android:title="FAQs"/>
+
+    <item
+        android:id="@+id/contact"
+        android:title="DONATE US"/>
+
+
+    <item
+        android:id="@+id/logout"
+        android:title="LOG OUT"/>
+</menu>
