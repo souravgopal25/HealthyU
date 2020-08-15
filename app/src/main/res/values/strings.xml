@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">donateUs</string>
+    <string name="donate_to_keep_running">Donate us to keep this
+        awesome app running and
+        making your life easy.
+</string>
+    <string name="every_penny_matters">Even a single Penny Matters</string>
+    <string name="donate_now">Donate Now</string>
+
+</resources>
