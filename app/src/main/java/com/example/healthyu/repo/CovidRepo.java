@@ -21,7 +21,7 @@ public class CovidRepo {
     private ApiInterface apiInterface;
 
     public CovidRepo() {
-        apiInterface= RetrofitRequest.getRetrofitInstanceNews().create(ApiInterface.class);
+        apiInterface= RetrofitRequest.getRetrofitInstanceStats().create(ApiInterface.class);
     }
     public LiveData<Covid> getData(Context context){
         final MutableLiveData<Covid> data=new MutableLiveData<>();
@@ -30,7 +30,7 @@ public class CovidRepo {
                 @Override
                 public void onResponse(Call<Covid> call, Response<Covid> response) {
                     data.setValue(response.body());
-                    Log.d(TAG,"DATA RECIEVED   " );
+                    Log.d(TAG,"DATA RECIEVED  " );
                 }
 
                 @Override

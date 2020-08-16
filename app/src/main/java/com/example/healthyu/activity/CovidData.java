@@ -41,12 +41,14 @@ public class CovidData extends AppCompatActivity {
         covidViewModel.getmData().observe(this, new Observer<Covid>() {
             @Override
             public void onChanged(Covid covid) {
+
                 covid1 = covid;
                 active.setText(covid1.getActive());
                 recovered.setText(covid1.getRecovered());
                 death.setText(covid1.getDeaths());
             }
         });
+
 
     }
 

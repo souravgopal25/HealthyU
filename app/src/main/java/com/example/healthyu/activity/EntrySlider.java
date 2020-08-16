@@ -27,4 +27,9 @@ public class EntrySlider extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
+    }
 }

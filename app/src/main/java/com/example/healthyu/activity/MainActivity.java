@@ -235,7 +235,9 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                 .setCancelable(false)
                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
+                        finishAffinity();
                         finish();
+
                     }
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
