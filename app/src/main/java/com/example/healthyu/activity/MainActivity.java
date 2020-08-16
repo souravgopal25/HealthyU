@@ -129,7 +129,8 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                         break;
 
                     case R.id.faq:
-                        Toast.makeText(MainActivity.this, "FAQs", Toast.LENGTH_SHORT).show();
+                        Intent intent2 = new Intent(MainActivity.this, FAQ.class);
+                        startActivity(intent2);
                         break;
 
                     case R.id.donate:
@@ -137,7 +138,8 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                         startActivity(intent);
                         break;
                     case R.id.about:
-                        Toast.makeText(MainActivity.this, "About us Selected", Toast.LENGTH_SHORT).show();
+                        Intent intent3 = new Intent(MainActivity.this, AboutUs.class);
+                        startActivity(intent3);
                         break;
                     case R.id.logout:
                         logout(MainActivity.this);
@@ -212,8 +214,8 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                 break;
 
             case R.id.covidupdates:
-                                /* Intent cIntent = new Intent(this, .class);
-                                 startActivity(cIntent);*/
+                                 Intent cIntent = new Intent(this, CovidData.class);
+                                 startActivity(cIntent);
                 break;
             case R.id.precautions:
                 Intent intent6 = new Intent(this, FirstAid.class);

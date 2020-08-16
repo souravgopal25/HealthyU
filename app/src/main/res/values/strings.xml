@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HealthyU</string>
+    <string name="app_name">MedKit</string>
     <string name="signin">SignIn</string>
     <string name="email">Email</string>
     <string name="phone">Phone</string>
