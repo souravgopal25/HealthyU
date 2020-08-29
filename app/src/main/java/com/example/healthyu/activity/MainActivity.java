@@ -277,4 +277,11 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
+
+    public void onclick1(View view) {
+        String url=view.getTag().toString();
+        Intent intent=new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        startActivity(intent);
+    }
 }

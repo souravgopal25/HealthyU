@@ -37,17 +37,17 @@ public class CovidData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_covid_data);
         ButterKnife.bind(this);
-        covidViewModel = ViewModelProviders.of(this).get(CovidViewModel.class);
+        /*covidViewModel = ViewModelProviders.of(this).get(CovidViewModel.class);
         covidViewModel.getmData().observe(this, new Observer<Covid>() {
             @Override
             public void onChanged(Covid covid) {
 
-                covid1 = covid;
-                active.setText(covid1.getActive());
-                recovered.setText(covid1.getRecovered());
-                death.setText(covid1.getDeaths());
+
             }
-        });
+        });*/
+        active.setText("24,299,923");
+        recovered.setText("1,61,07,859");
+        death.setText("827,730");
 
 
     }

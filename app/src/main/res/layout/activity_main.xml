@@ -188,6 +188,7 @@
                                 android:elevation="20dp"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/corona"
+                                android:onClick="onclick1"
                                 android:tag="https://www.cdc.gov/coronavirus/about/prevention.html" />
 
                             <ImageButton
@@ -200,6 +201,7 @@
                                 android:layout_toRightOf="@id/imageButton"
                                 android:elevation="20dp"
                                 android:scaleType="centerCrop"
+                                android:onClick="onclick1"
                                 android:src="@drawable/diabetes"
                                 android:tag="https://www.helpguide.org/articles/diets/the-diabetes-diet.htm" />
 
@@ -212,6 +214,7 @@
                                 android:layout_marginTop="18dp"
                                 android:elevation="20dp"
                                 android:scaleType="centerCrop"
+                                android:onClick="onclick1"
                                 android:src="@drawable/asthma"
                                 android:tag="https://www.webmd.com/asthma/guide/asthma-prevention" />
 
@@ -224,6 +227,7 @@
                                 android:layout_marginTop="18dp"
                                 android:layout_toRightOf="@id/imageButton3"
                                 android:elevation="20dp"
+                                android:onClick="onclick1"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/eye"
                                 android:tag="https://www.healthline.com/health/eye-health-disease-prevention#1" />
@@ -237,6 +241,7 @@
                                 android:layout_marginTop="18dp"
                                 android:elevation="20dp"
                                 android:scaleType="centerCrop"
+                                android:onClick="onclick1"
                                 android:src="@drawable/skin"
                                 android:tag="https://www.webmd.com/skin-problems-and-treatments/guide/skin-problems-treatments-symptoms-types" />
 
@@ -249,6 +254,7 @@
                                 android:layout_marginTop="18dp"
                                 android:layout_toRightOf="@id/imageButton5"
                                 android:elevation="20dp"
+                                android:onClick="onclick1"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/hair1"
                                 android:tag="https://www.webmd.com/skin-problems-and-treatments/hair-loss/hair-problems#1" />
